@@ -109,9 +109,9 @@ RSpec.describe StationsController, type: :controller do
     context 'with valid attributes' do
       it 'updates attributes' do
         put :update, params: { id: station,
-                               station: attributes_for(:station) }
+                               station: attributes_for(:update_station) }
         station.reload
-        expect(station.name).to have_text('Station')
+        expect(station.name).to eq'Lviv'
       end
 
       it 'redirects to the updated station' do
@@ -126,7 +126,7 @@ RSpec.describe StationsController, type: :controller do
         put :update, params: { id: station,
                                station: attributes_for(:invalid_station) }
         station.reload
-        expect(station.name).to have_text('Station')
+        expect(station.name).to eq('Station')
       end
     end
   end
