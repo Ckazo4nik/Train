@@ -29,5 +29,16 @@ module Traine
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.generators do |g|
+      g.test_framework :rspec,
+                       fixtures: true,
+                       view_spec: false,
+                       helper_spec: false,
+                       routing_spec: false,
+                       request_spec: false,
+                       controller_spec: true
+      g.fixture_replacement :factory_bot, dir: 'spec/factories'
+    end
   end
 end
