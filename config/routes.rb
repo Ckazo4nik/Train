@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :stations
   resources :users
+  resources :trains
   delete '/logout', to: 'users#logout'
 end
