@@ -13,7 +13,7 @@
     <%= notice %>
     <%= alert %>
     <%= @current_user.name if @current_user %>
-    <%= link_to 'logout', logout_path, method: :delete  if @current_user%>
+    <%= link_to 'logout', logout_path, method: :delete  if @current_user %>
     <%= link_to 'sign_up', new_user_path unless @current_user%>
 
 
