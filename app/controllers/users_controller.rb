@@ -19,7 +19,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    respond_with(@user = User.create(user_params))
+    @user = User.find_or_create_by(user_params)
+    session[:user_id] = @user.id if @user
+    respond_with(@user)
   end
 
   def update
@@ -29,6 +31,11 @@ class UsersController < ApplicationController
 
   def destroy
     respond_with(@user.destroy)
+  end
+
+  def logout
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
   private
