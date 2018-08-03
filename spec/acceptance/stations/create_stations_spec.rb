@@ -9,12 +9,12 @@ feature 'Create station' do
 
     expect(page).to have_content 'successfully created.'
   end
-  scenario 'Admin create stations' do
+  scenario 'Admin create stations failed' do
     visit stations_path
     click_on 'Create station'
     fill_in 'Station name', with: ''
     click_on 'Save'
 
-    expect(page).to have_content 'Name can`t be blank'
+    expect(page).to have_content 'Name can\'t be blank'
   end
 end
