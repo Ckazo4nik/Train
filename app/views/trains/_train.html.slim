@@ -1,0 +1,4 @@
+p Name
+= link_to train.first_name_station.to_s + train.last_name_station.to_s, train_path(train)
+= link_to 'Edit', edit_train_path(train)
+= link_to 'Delete', train_path(train), method: :delete

@@ -1,0 +1,9 @@
+= form_for @train do |f|
+  = f.error_messages
+  = f.label :first_name_station, 'First station name'
+  = f.collection_select(:first_name_station, Station.all, :name, :name)
+  = f.label :last_name_station, 'Last station name'
+  = f.collection_select(:last_name_station, Station.all, :name, :name)
+  = f.label :place, 'place count'
+  = f.number_field :place
+  = f.submit 'Save'
