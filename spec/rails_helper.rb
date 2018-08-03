@@ -12,12 +12,10 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.test_framework :minitest
     with.test_framework :minitest_4
-    with.test_framework :test_unit
 
     with.library :active_record
     with.library :active_model
     with.library :action_controller
-    with.library :rails
   end
 end
 
